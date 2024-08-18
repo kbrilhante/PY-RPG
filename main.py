@@ -20,14 +20,13 @@ def get_choice(question, data):
 
 
 def char_builder():
-    global player
     name = input("What is your name?\n> ").strip().title()
     race = get_choice("What is your race?", list(races))
     p_class = get_choice("What is your class?", list(classes))
-    player = Player(name, race, p_class)
+    p = Player(name, race, p_class)
+    p.print_file()
+    return p
 
 
 # noinspection SpellCheckingInspection
-player = False
-char_builder()
-player.print_file()
+player = char_builder()
