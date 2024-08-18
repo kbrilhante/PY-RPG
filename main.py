@@ -1,8 +1,6 @@
 from rules import *
 from player import Player
-
-print(list(races))
-print(classes)
+from prettytable import PrettyTable
 
 
 def get_choice(question, data):
@@ -28,5 +26,4 @@ def char_builder():
     return p
 
 
-# noinspection SpellCheckingInspection
 player = char_builder()

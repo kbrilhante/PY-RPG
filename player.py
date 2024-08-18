@@ -12,6 +12,8 @@ class Player:
         self.defense = 10 + races[player_race]['defense']
         self.magic = 10 + races[player_race]['magic']
         self.speed = races[player_race]['speed']
+        self.xp = 0
+        self.level = 1
         self.health_points = randint(1, classes[player_class]['hp']) + classes[player_class]['hp'] + self.defense
         self.mana_points = randint(1, classes[player_class]['mp']) + classes[player_class]['mp'] + self.magic
         self.gold = randint(1, 20) * 10
@@ -21,10 +23,12 @@ class Player:
         print(f"\nNAME: {self.name}")
         print(f"{self.p_class}")
         print(f"{self.race}\n")
+        print(f"LEVEL: {self.level}")
         # print(f"GOLD: {self.gold}")
         print(f"HP: {self.health_points}")
         print(f"MP: {self.mana_points}")
         table = PrettyTable()
+        table.title = "Player Attributes"
         table.field_names = ['Attribute', 'Value']
         table.add_rows([
             ['ATK', self.attack],
