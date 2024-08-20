@@ -8,15 +8,15 @@ class Player:
         self.name = name
         self.race = player_race
         self.p_class = player_class
-        self.attack = 10 + races[player_race]['attack']
-        self.defense = 10 + races[player_race]['defense']
-        self.magic = 10 + races[player_race]['magic']
-        self.speed = races[player_race]['speed']
+        self.attack = 10 + races[player_race]['attack'] + classes[player_class]['attack']
+        self.defense = 10 + races[player_race]['defense'] + classes[player_class]['defense']
+        self.magic = 10 + races[player_race]['magic'] + classes[player_class]['magic']
+        self.speed = races[player_race]['speed'] + classes[player_class]['speed']
         self.xp = 0
         self.level = 1
         self.health_points = randint(1, classes[player_class]['hp']) + classes[player_class]['hp'] + self.defense
         self.mana_points = randint(1, classes[player_class]['mp']) + classes[player_class]['mp'] + self.magic
-        self.gold = randint(1, 20) * 10
+        self.gold = 100
         self.inventory = {}
 
     def print_file(self):
